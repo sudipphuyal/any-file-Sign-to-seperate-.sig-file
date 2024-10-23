@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Signing and Verification</title>
+</head>
+<body>
+    <h1>File Digital Signing and Verification</h1>
+
+    <!-- Form to upload a file to sign -->
+    <h2>Sign a File</h2>
+    <form action="/sign" method="POST" enctype="multipart/form-data">
+        <label for="signer">Select Signer:</label>
+        <select name="signer">
+            <option value="PersonA">Person A</option>
+            <option value="PersonB">Person B</option>
+        </select><br><br>
+        <input type="file" name="file" required>
+        <button type="submit">Sign File</button>
+    </form>
+
+    <!-- Form to upload a file and signature to verify -->
+    <h2>Verify a File</h2>
+    <form action="/verify" method="POST" enctype="multipart/form-data">
+        <label for="file">File to verify:</label>
+        <input type="file" name="file" required><br><br>
+        <label for="signature">Signature:</label>
+        <input type="file" name="signature" required><br><br>
+        <button type="submit">Verify Signature</button>
+    </form>
+</body>
+</html>
